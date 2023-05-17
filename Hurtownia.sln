@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hurtownia", "Hurtownia\Hurt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HurtowniaDomain", "HurtowniaDomain\HurtowniaDomain.csproj", "{4F94BB65-6E78-48FF-81A6-0FDE2D1BD508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HurtowniaData", "HurtowniaData\HurtowniaData.csproj", "{D45FE9B4-BC18-4665-A7DB-54F66BE8BF10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HurtowniaData", "HurtowniaData\HurtowniaData.csproj", "{D45FE9B4-BC18-4665-A7DB-54F66BE8BF10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HurtowniaBaza", "Baza\HurtowniaBaza.csproj", "{E246EBBF-B727-4CE5-B93F-7115BBEDC4A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HurtowniaBaza", "Baza\HurtowniaBaza.csproj", "{E246EBBF-B727-4CE5-B93F-7115BBEDC4A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConectivoApp", "ConectivoApp\ConectivoApp.csproj", "{E39B4AD4-8099-49F2-B331-A063D529AD7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E246EBBF-B727-4CE5-B93F-7115BBEDC4A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E246EBBF-B727-4CE5-B93F-7115BBEDC4A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E246EBBF-B727-4CE5-B93F-7115BBEDC4A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E39B4AD4-8099-49F2-B331-A063D529AD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E39B4AD4-8099-49F2-B331-A063D529AD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E39B4AD4-8099-49F2-B331-A063D529AD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E39B4AD4-8099-49F2-B331-A063D529AD7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
