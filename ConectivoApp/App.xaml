@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:ConectivoApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="ResourceDictionaries\MainDictionarie.xaml"/>
     </Application.Resources>
 </Application>
