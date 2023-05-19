@@ -34,7 +34,12 @@ namespace ConectivoApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var color = MainGrid.Background as SolidColorBrush;
+            var newColor = color.Color.Equals(Color.FromArgb(0xFF, 0xED, 0xED, 0xED)) ?
+                            new SolidColorBrush(Color.FromArgb(0xFF, 0x6A, 0x6B, 0x6B)) :
+                            new SolidColorBrush(Color.FromArgb(0xFF, 0xED, 0xED, 0xED));
 
+            MainGrid.Background = newColor;
         }
     }
 }
