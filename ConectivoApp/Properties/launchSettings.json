@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConectivoApp": {
+      "commandName": "Project",
+      "sqlDebugging": false
+    }
+  }
+}

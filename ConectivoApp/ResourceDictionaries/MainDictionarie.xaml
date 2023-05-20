@@ -6,4 +6,14 @@
         <Setter Property="Foreground" Value="#bccee6"/>
         
     </Style>
+
+    <Style TargetType="Button" x:Key="BorderButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#FF32ADD6"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+        </Style.Resources>
+    </Style>
 </ResourceDictionary>

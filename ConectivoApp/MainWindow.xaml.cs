@@ -32,6 +32,11 @@ namespace ConectivoApp
             }
         }
 
+
+
+        /// <summary>
+        /// Night/Day switch button logic
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var color = MainGrid.Background as SolidColorBrush;
@@ -40,6 +45,7 @@ namespace ConectivoApp
                             new SolidColorBrush(Color.FromArgb(0xFF, 0xED, 0xED, 0xED));
 
             MainGrid.Background = newColor;
+         
         }
     }
 }

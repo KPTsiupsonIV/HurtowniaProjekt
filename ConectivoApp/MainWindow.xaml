@@ -18,12 +18,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-
             <RowDefinition Height="108*"/>
             <RowDefinition Height="345*"/>
             <RowDefinition/>
-
         </Grid.RowDefinitions>
+        
+        <!-- Header -->
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="161,0,71,0">
             <TextBlock 
                    Grid.Column="1" 
@@ -56,11 +56,16 @@
                 </StackPanel>
             </Button>
         
-
+        <Button Width="40" Height="40" Click="Button_Click" Background="Transparent" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0">
+            <Image Source="images\icon8.png"/>
+        </Button>
+        
+        
+        <!-- Main -->
         <Frame x:Name="Main" 
                Grid.Row="1" Grid.Column="1"/>
 
-
+        <!-- Navigation Left -->
         <StackPanel x:Name="NavButtons"
                     Grid.Row="1"
                     Grid.Column="0"
@@ -98,10 +103,9 @@
             </Button>
         </StackPanel>
 
-         
-        <Button Width="40" Height="40" Click="Button_Click" Background="Transparent" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0">
-            <Image Source="images\icon8.png"/>
-        </Button>
+
+
+        <Button Grid.Row="1" Height="40" VerticalAlignment="Bottom" Margin="10 0 10 10" Style="{StaticResource BorderButton}" Content="Log in" Width="70" ></Button>
             
         
 
