@@ -29,4 +29,8 @@
     <Resource Include="images\icon8.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

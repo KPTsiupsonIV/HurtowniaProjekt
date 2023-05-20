@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ConectivoApp"
+        xmlns:local="clr-namespace:ConectivoApp" 
+        xmlns:views="clr-namespace:ConectivoApp.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="454" Width="807" 
         ResizeMode="NoResize"
@@ -48,8 +49,7 @@
                    Margin="0,24,0,0" Height="48"/>
         </StackPanel>
         
-            <Button Background="#464747" BorderBrush="{x:Null}" BorderThickness="0" Grid.Row="0" 
-            Grid.Column="0">
+            <Button Background="#464747" BorderBrush="{x:Null}" BorderThickness="0">
                 <StackPanel>
                     <Image Source="images\icon2.png" Height="70" Width="70" Margin="0,10,0,0" Stretch="UniformToFill" Opacity="0.8"/>
                     <TextBlock Text="ID: 0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#bccee6" FontSize="14" FontWeight="DemiBold"></TextBlock>
@@ -62,16 +62,16 @@
         
         
         <!-- Main -->
-        <Frame x:Name="Main" 
-               Grid.Row="1" Grid.Column="1"/>
+        <views:DeliveriesView Grid.Column="1" Grid.Row="1"/>
 
         <!-- Navigation Left -->
         <StackPanel x:Name="NavButtons"
                     Grid.Row="1"
                     Grid.Column="0"
                     Background="#464747"
+                    Margin="0 0 0 0"
                     >
-            <Button x:Name="Delivery" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}" BorderThickness="0">
+            <Button x:Name="Delivery" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}" BorderThickness="0" Margin="0 20 0 0">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="images\icon3.png" Height="24" Width="24" HorizontalAlignment="Left" Margin="0,0,10,0" ></Image>
                     <TextBlock FontSize="18" Width="76"> Delivery</TextBlock>
@@ -102,9 +102,9 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-
-
-
+        
+        
+        <!-- Log in button -->
         <Button Grid.Row="1" Height="40" VerticalAlignment="Bottom" Margin="10 0 10 10" Style="{StaticResource BorderButton}" Content="Log in" Width="70" ></Button>
             
         
