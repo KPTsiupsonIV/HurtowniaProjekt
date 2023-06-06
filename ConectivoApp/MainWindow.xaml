@@ -4,29 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConectivoApp" 
-        xmlns:views="clr-namespace:ConectivoApp.Views"
+        xmlns:views="clr-namespace:ConectivoApp.Data" 
+        
         mc:Ignorable="d"
-        Title="MainWindow" Height="454" Width="807" 
+        Title="MainWindow" Height="450" Width="800" 
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        
         >
 
     <Grid x:Name="MainGrid" Background="#ededed">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="*"/>
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="108*"/>
             <RowDefinition Height="345*"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <!-- Header -->
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="161,0,71,0">
-            <TextBlock 
+        <Grid Grid.Column="1" HorizontalAlignment="Right" Width="600">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left">
+                <TextBlock 
                    Grid.Column="1" 
                    Text="CONECT" 
                    FontSize="50" 
@@ -37,7 +37,7 @@
                    Foreground="#177cb3" 
                    Margin="148,24,0,0" Height="48"  />
 
-            <TextBlock 
+                <TextBlock 
                    Grid.Column="1" 
                    Text="IVO" 
                    FontSize="50" 
@@ -47,67 +47,72 @@
                    VerticalAlignment="Top" 
                    Foreground="#FF32ADD6" 
                    Margin="0,24,0,0" Height="48"/>
-        </StackPanel>
-        
-            <Button Background="#464747" BorderBrush="{x:Null}" BorderThickness="0">
-                <StackPanel>
-                    <Image Source="images\icon2.png" Height="70" Width="70" Margin="0,10,0,0" Stretch="UniformToFill" Opacity="0.8"/>
-                    <TextBlock Text="ID: 0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#bccee6" FontSize="14" FontWeight="DemiBold"></TextBlock>
-                </StackPanel>
+            </StackPanel>
+            <Button Width="40" Height="40" Click="Button_Click" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0">
+                <Image Source="images\icon8.png"/>
             </Button>
-        
-        <Button Width="40" Height="40" Click="Button_Click" Background="Transparent" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0">
-            <Image Source="images\icon8.png"/>
-        </Button>
-        
-        
+        </Grid>
+
         <!-- Main -->
-        <views:DeliveriesView Grid.Column="1" Grid.Row="1"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <DataGrid x:Name="deliveriesGrid" Margin="10"
+                       >
+
+            </DataGrid>
+        </Grid>
 
         <!-- Navigation Left -->
-        <StackPanel x:Name="NavButtons"
+        <Grid Grid.RowSpan="2">
+            <StackPanel x:Name="NavButtons"
                     Grid.Row="1"
                     Grid.Column="0"
                     Background="#464747"
                     Margin="0 0 0 0"
                     >
-            <Button x:Name="Delivery" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}" BorderThickness="0" Margin="0 20 0 0">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="images\icon3.png" Height="24" Width="24" HorizontalAlignment="Left" Margin="0,0,10,0" ></Image>
-                    <TextBlock FontSize="18" Width="76"> Delivery</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="Orders" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
-                <StackPanel Orientation="Horizontal" Margin="0,0,10,0">
-                    <Image Source="/images/icon4.png" Width="24" Height="24" Margin="0,0,10,0" />
-                    <TextBlock FontSize="18" Width="70"><Run Text="Orders"/></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="Products" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/images/icon5.png" Height="24" Width="24" Margin="0,0,10,0"/>
-                    <TextBlock FontSize="18" Width="80"><Run Language="pl-pl" Text="Products"/></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="Supplier" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/images/icon6.png" Height="24" Width="24" HorizontalAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBlock FontSize="18" Width="81"><Run Text="Suppliers"/></TextBlock>
-                </StackPanel>
-            </Button>
-            <Button x:Name="Stock" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/images/icon7.png" Height="24" Width="24" Margin="0,0,10,0" />
-                    <TextBlock FontSize="18" Width="81"><Run Text="Stock"/></TextBlock>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-        
-        
-        <!-- Log in button -->
-        <Button Grid.Row="1" Height="40" VerticalAlignment="Bottom" Margin="10 0 10 10" Style="{StaticResource BorderButton}" Content="Log in" Width="70" ></Button>
-            
-        
+                <Button Background="#464747" BorderBrush="{x:Null}" BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="images\icon2.png" Height="70" Width="70" Margin="0,10,0,0" Stretch="UniformToFill" Opacity="0.8"/>
+                        <TextBlock Text="ID: 0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#bccee6" FontSize="14" FontWeight="DemiBold"></TextBlock>
+                    </StackPanel>
+                </Button>
+                
+                <Button x:Name="Delivery" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}" BorderThickness="0" Margin="0 20 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="images\icon3.png" Height="24" Width="24" HorizontalAlignment="Left" Margin="0,0,10,0" ></Image>
+                        <TextBlock FontSize="18" Width="76"> Delivery</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="Orders" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,10,0">
+                        <Image Source="/images/icon4.png" Width="24" Height="24" Margin="0,0,10,0" />
+                        <TextBlock FontSize="18" Width="70"><Run Text="Orders"/></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="Products" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/icon5.png" Height="24" Width="24" Margin="0,0,10,0"/>
+                        <TextBlock FontSize="18" Width="80"><Run Language="pl-pl" Text="Products"/></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="Supplier" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/icon6.png" Height="24" Width="24" HorizontalAlignment="Left" Margin="0,0,10,0"/>
+                        <TextBlock FontSize="18" Width="81"><Run Text="Suppliers"/></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="Stock" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/icon7.png" Height="24" Width="24" Margin="0,0,10,0" />
+                        <TextBlock FontSize="18" Width="81"><Run Text="Stock"/></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+
+            <!-- Log in button -->
+            <Button Grid.Row="1" Height="40" VerticalAlignment="Bottom" Margin="10 0 10 10" Style="{StaticResource BorderButton}" Content="Log in" Width="70" ></Button>
+        </Grid>
+
 
     </Grid>
 </Window>

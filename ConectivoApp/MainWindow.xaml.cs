@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConectivoApp.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
+using ConectivoApp;
 
 namespace ConectivoApp
 {
@@ -20,16 +23,15 @@ namespace ConectivoApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Delivery> deliveryList { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-        }
-       public void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if(e.LeftButton == MouseButtonState.Pressed)
+            using(HurtowniaContext _context = new HurtowniaContext())
             {
-                DragMove();
+                deliveryList = _context.Deliveries.ToList();
             }
+            deliveriesGrid.ItemsSource = deliveryList;
         }
 
 
@@ -41,11 +43,13 @@ namespace ConectivoApp
         {
             var color = MainGrid.Background as SolidColorBrush;
             var newColor = color.Color.Equals(Color.FromArgb(0xFF, 0xED, 0xED, 0xED)) ?
-                            new SolidColorBrush(Color.FromArgb(0xFF, 0x6A, 0x6B, 0x6B)) :
+                            new SolidColorBrush(Color.FromArgb(0xFF, 0xB8, 0xB9, 0xBA)):
                             new SolidColorBrush(Color.FromArgb(0xFF, 0xED, 0xED, 0xED));
 
             MainGrid.Background = newColor;
          
         }
+
+       
     }
 }
