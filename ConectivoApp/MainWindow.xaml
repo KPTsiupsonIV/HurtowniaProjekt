@@ -72,16 +72,17 @@
                 <Button Background="#464747" BorderBrush="{x:Null}" BorderThickness="0">
                     <StackPanel>
                         <Image Source="images\icon2.png" Height="70" Width="70" Margin="0,10,0,0" Stretch="UniformToFill" Opacity="0.8"/>
-                        <TextBlock Text="ID: 0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#bccee6" FontSize="14" FontWeight="DemiBold"></TextBlock>
+                        <TextBlock x:Name="IdText" Text="ID: 0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#bccee6" FontSize="14" FontWeight="DemiBold"></TextBlock>
                     </StackPanel>
                 </Button>
-                
-                <Button x:Name="Delivery" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}" BorderThickness="0" Margin="0 20 0 0">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="images\icon3.png" Height="24" Width="24" HorizontalAlignment="Left" Margin="0,0,10,0" ></Image>
-                        <TextBlock FontSize="18" Width="76"> Delivery</TextBlock>
-                    </StackPanel>
-                </Button>
+                <Border x:Name="DeliveryButtonBorder" BorderBrush="#FF32ADD6" BorderThickness="0" Margin="5">
+                    <Button x:Name="DeliveryButton" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}" BorderThickness="0" Margin="0 0 0 0" Click="DeliveryButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="images\icon3.png" Height="24" Width="24" HorizontalAlignment="Left" Margin="0,0,10,0" ></Image>
+                            <TextBlock FontSize="18" Width="76"> Delivery</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Border>
                 <Button x:Name="Orders" Height="40" Style="{StaticResource Navbutton}" BorderBrush="{x:Null}">
                     <StackPanel Orientation="Horizontal" Margin="0,0,10,0">
                         <Image Source="/images/icon4.png" Width="24" Height="24" Margin="0,0,10,0" />
@@ -110,7 +111,7 @@
 
 
             <!-- Log in button -->
-            <Button Grid.Row="1" Height="40" VerticalAlignment="Bottom" Margin="10 0 10 10" Style="{StaticResource BorderButton}" Content="Log in" Width="70" ></Button>
+            <Button Grid.Row="1" Height="40" VerticalAlignment="Bottom" Margin="10 0 10 10" Style="{StaticResource BorderButton}" Content="Log in" Width="70" Click="Button_Click_1" ></Button>
         </Grid>
 
 

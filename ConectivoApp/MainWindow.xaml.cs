@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.EntityFrameworkCore;
 using ConectivoApp;
+using System.Configuration;
+using System.Windows.Threading;
 
 namespace ConectivoApp
 {
@@ -23,15 +25,44 @@ namespace ConectivoApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        protected int login = 0;
+        private DispatcherTimer timer;
+        public LoginWindow loginWindow = new LoginWindow();
         public List<Delivery> deliveryList { get; set; }
+        public List<Employee> employeeList { get; set; }
+        public List<Order> orderList { get; set; }
+        public List<Product> productList { get; set; }
+        public List<Warehouse> warehouseList { get; set; }
+        public List<Supplier> supliereList { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
             using(HurtowniaContext _context = new HurtowniaContext())
             {
+               
                 deliveryList = _context.Deliveries.ToList();
+                employeeList = _context.Employees.ToList();
+                orderList = _context.Orders.ToList();
+                productList = _context.Products.ToList();
+                warehouseList = _context.Warehouses.ToList();
+                supliereList = _context.Suppliers.ToList();
+
             }
-            deliveriesGrid.ItemsSource = deliveryList;
+            timer = new DispatcherTimer();
+
+            // Set the interval (e.g., 1 second)
+            timer.Interval = TimeSpan.FromSeconds(1);
+
+            // Subscribe to the Tick event
+            timer.Tick += Timer_Tick;
+
+            // Start the timer
+            timer.Start();
+            
+
+
+
         }
 
 
@@ -50,6 +81,34 @@ namespace ConectivoApp
          
         }
 
-       
+        private void DeliveryButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                deliveriesGrid.ItemsSource = deliveryList;
+                DeliveryButtonBorder.BorderThickness = new Thickness(2);
+            }
+        }
+
+        
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
+            loginWindow.Show();
+
+
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            
+            login = loginWindow.GetState();
+
+            if(login == 1)
+            {
+                IdText.Text = $"ID: {loginWindow.GetId()}";
+            }
+        }
     }
 }
