@@ -49,7 +49,7 @@
                    Margin="0,24,0,0" Height="48"/>
             </StackPanel>
             <Button Width="40" Height="40" Click="Button_Click" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0">
-                <Image Source="images\icon8.png"/>
+                <Image Source="images\icons9.png"/>
             </Button>
         </Grid>
 

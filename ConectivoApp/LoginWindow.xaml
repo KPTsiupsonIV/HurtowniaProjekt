@@ -22,12 +22,12 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Text="CONECTIVO" FontSize="60" FontFamily="Roboto" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF32ADD6" Margin="0,54,0,0" Grid.RowSpan="2" />
 
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Identyfikator" FontSize="20" FontFamily="Roboto"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF32ADD6" Margin="99,84,0,0" FontWeight="DemiBold" />
-        <TextBox x:Name="username" Grid.Column="1" Margin="99,108,99,78" Grid.Row="2" Height="NaN" Width="NaN" RenderTransformOrigin="0.588,0.477" BorderThickness="0,0,0,3" BorderBrush="#818282" Background="Transparent"/>
+        <TextBox x:Name="username" Grid.Column="1" Margin="99,108,99,69" Grid.Row="2" Height="NaN" Width="NaN"  BorderThickness="0,0,0,3" BorderBrush="#818282" Background="Transparent" Foreground="#FF32ADD6" FontWeight="DemiBold"/>
 
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Hasło" FontSize="20" FontFamily="Roboto"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF32ADD6" Margin="99,152,0,0" FontWeight="DemiBold"/>
-        <PasswordBox x:Name="password" Grid.Column="1" Margin="99,176,99,10" Grid.Row="2" Height="NaN" Width="NaN" RenderTransformOrigin="0.54,2.79" Background="Transparent" BorderThickness="0,0,0,3" BorderBrush="#818282"/>
+        <PasswordBox x:Name="password" Grid.Column="1" Margin="99,172,99,103" Grid.Row="2" Height="NaN" Width="NaN"  Background="Transparent" BorderThickness="0,0,0,3" BorderBrush="#818282" Foreground="#FF32ADD6" Padding="0,0,10,0" Grid.RowSpan="2"/>
 
-        <Button x:Name="buttonlogin" Grid.Row="3" Grid.Column="1" Content="Login" Height="36" Width="80" BorderThickness="3" FontSize=" 16" BorderBrush="#FF32ADD6" FontWeight="DemiBold" Background="#818282" Foreground="AntiqueWhite" Click="buttonlogin_Click">
+        <Button x:Name="buttonlogin" Grid.Row="3" Grid.Column="1" Content="Login" BorderThickness="3" FontSize=" 16" BorderBrush="#FF32ADD6" FontWeight="DemiBold" Background="#818282" Foreground="AntiqueWhite" Click="buttonlogin_Click" Margin="188,32,188,32">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="14"></Setter>
