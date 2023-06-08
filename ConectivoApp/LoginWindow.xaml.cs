@@ -47,7 +47,11 @@ namespace ConectivoApp
 
             if (logika.IsLogged(Id, haslo, employeeList)) { 
                 state = 1;
-            this.Close();
+                textIfBad.Text = string.Empty;
+            }
+            else
+            {
+                textIfBad.Text = "Wrong Password or Login";
             }
 
         }

@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:ConectivoApp.Data" 
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" 
+        Title="MainWindow" Height="500" Width="900" 
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
@@ -55,10 +55,21 @@
 
         <!-- Main -->
         <Grid Grid.Row="1" Grid.Column="1">
-            <DataGrid x:Name="deliveriesGrid" Margin="10"
+            <DataGrid x:Name="deliveriesGrid" Margin="10,52,10,10"
                        >
 
             </DataGrid>
+            <Button Height="36" VerticalAlignment="Bottom" Margin="23,0,601,317" Background="Transparent" Foreground="AntiqueWhite" BorderThickness="0">
+                <Image Source="images\Search.png" RenderTransformOrigin="0.5,0.5">
+                </Image>
+            </Button>
+            <TextBox Margin="74,6,471,322" Background="Transparent" Foreground="#FF32ADD6" FontWeight="DemiBold" BorderThickness="0,0,0,3" BorderBrush="#177cb3"></TextBox>
+
+
+            <Button x:Name="SaveButton" Style="{StaticResource BorderButton}" Content="SAVE" Margin="588,0,10,317" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"></Button>
+            <Button x:Name="SaveButton_Copy" Style="{StaticResource BorderButton}" Content="ADD" Margin="499,0,99,317" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"/>
+
+
         </Grid>
 
         <!-- Navigation Left -->

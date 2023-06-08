@@ -108,6 +108,7 @@ namespace ConectivoApp
             if(login == 1)
             {
                 IdText.Text = $"ID: {loginWindow.GetId()}";
+                loginWindow.Close();
             }
         }
     }

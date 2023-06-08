@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConectivoApp"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="LoginWindow" Height="470" Width="600"
+        WindowStartupLocation="CenterScreen">
     <Grid Background="#606161">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,13 +23,15 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="CONECTIVO" FontSize="60" FontFamily="Roboto" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF32ADD6" Margin="0,54,0,0" Grid.RowSpan="2" />
 
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="Identyfikator" FontSize="20" FontFamily="Roboto"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF32ADD6" Margin="99,84,0,0" FontWeight="DemiBold" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Login" FontSize="20" FontFamily="Roboto"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF32ADD6" Margin="99,84,0,0" FontWeight="DemiBold" />
         <TextBox x:Name="username" Grid.Column="1" Margin="99,108,99,69" Grid.Row="2" Height="NaN" Width="NaN"  BorderThickness="0,0,0,3" BorderBrush="#818282" Background="Transparent" Foreground="#FF32ADD6" FontWeight="DemiBold"/>
 
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Hasło" FontSize="20" FontFamily="Roboto"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF32ADD6" Margin="99,152,0,0" FontWeight="DemiBold"/>
-        <PasswordBox x:Name="password" Grid.Column="1" Margin="99,172,99,103" Grid.Row="2" Height="NaN" Width="NaN"  Background="Transparent" BorderThickness="0,0,0,3" BorderBrush="#818282" Foreground="#FF32ADD6" Padding="0,0,10,0" Grid.RowSpan="2"/>
+        <PasswordBox x:Name="password" Grid.Column="1" Margin="99,176,100,5" Grid.Row="2" Height="NaN" Width="NaN"  Background="Transparent" BorderThickness="0,0,0,3" BorderBrush="#818282" Foreground="#FF32ADD6" Padding="0,0,10,0"/>
 
-        <Button x:Name="buttonlogin" Grid.Row="3" Grid.Column="1" Content="Login" BorderThickness="3" FontSize=" 16" BorderBrush="#FF32ADD6" FontWeight="DemiBold" Background="#818282" Foreground="AntiqueWhite" Click="buttonlogin_Click" Margin="188,32,188,32">
+
+        <TextBlock x:Name="textIfBad" Grid.Row="3" Grid.Column="1"  FontSize="18" FontFamily="Roboto"  HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#f5aa42" Margin="0,3,0,0" FontWeight="DemiBold" Width="Auto"/>
+        <Button x:Name="buttonlogin" Grid.Row="3" Grid.Column="1" Content="Login" BorderThickness="3" FontSize=" 16" BorderBrush="#FF32ADD6" FontWeight="DemiBold" Background="#818282" Foreground="AntiqueWhite" Click="buttonlogin_Click" Margin="118,32,119,32">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="14"></Setter>
