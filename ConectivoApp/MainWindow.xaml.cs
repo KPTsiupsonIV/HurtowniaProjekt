@@ -26,6 +26,7 @@ namespace ConectivoApp
     public partial class MainWindow : Window
     {
         protected int login = 0;
+        private bool dayswitch = true;
         private DispatcherTimer timer;
         public LoginWindow loginWindow = new LoginWindow();
         public List<Delivery> deliveryList { get; set; }
@@ -78,7 +79,19 @@ namespace ConectivoApp
                             new SolidColorBrush(Color.FromArgb(0xFF, 0xED, 0xED, 0xED));
 
             MainGrid.Background = newColor;
-         
+            if (dayswitch)
+            {
+                daySwitch.Source = new BitmapImage(new Uri("images/icons10.png", UriKind.Relative));
+                dayswitch = false;
+                searchIcon.Source = new BitmapImage(new Uri("images/Search2.png", UriKind.Relative));
+            }
+            else
+            {
+                daySwitch.Source = new BitmapImage(new Uri("images/icons9.png", UriKind.Relative));
+                dayswitch = true;
+                searchIcon.Source = new BitmapImage(new Uri("images/Search.png", UriKind.Relative));
+            }
+
         }
 
         private void DeliveryButton_Click(object sender, RoutedEventArgs e)

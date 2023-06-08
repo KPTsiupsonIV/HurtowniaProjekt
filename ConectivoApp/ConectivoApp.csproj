@@ -16,8 +16,10 @@
     <None Remove="images\icon6.png" />
     <None Remove="images\icon7.png" />
     <None Remove="images\icon8.png" />
+    <None Remove="images\icons10.png" />
     <None Remove="images\icons9.png" />
     <None Remove="images\Search.png" />
+    <None Remove="images\Search2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,8 +43,10 @@
     <Resource Include="images\icon6.png" />
     <Resource Include="images\icon7.png" />
     <Resource Include="images\icon8.png" />
+    <Resource Include="images\icons10.png" />
     <Resource Include="images\icons9.png" />
     <Resource Include="images\Search.png" />
+    <Resource Include="images\Search2.png" />
   </ItemGroup>
 
 </Project>
