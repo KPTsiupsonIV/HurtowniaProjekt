@@ -62,7 +62,7 @@ namespace ConectivoApp
             timer.Start();
             
 
-
+           
 
         }
 
@@ -94,22 +94,18 @@ namespace ConectivoApp
 
         }
 
-        private void DeliveryButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (login == 1)
-            {
-                deliveriesGrid.ItemsSource = deliveryList;
-                DeliveryButtonBorder.BorderThickness = new Thickness(2);
-            }
-        }
+       
 
         
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Loggin_Click(object sender, RoutedEventArgs e)
         {
-            
-            loginWindow.Show();
-
+            if(login == 0) { 
+                loginWindow.Show(); 
+                loginButton.Content = "Log Off"; } 
+            else {
+                App.Current.Shutdown();
+            }
 
         }
 
@@ -121,7 +117,70 @@ namespace ConectivoApp
             if(login == 1)
             {
                 IdText.Text = $"ID: {loginWindow.GetId()}";
-                loginWindow.Close();
+                loginWindow.Hide();
+            }
+        }
+        private void DeliveryButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                deliveriesGrid.ItemsSource = deliveryList;
+                DeliveryButtonBorder.BorderThickness = new Thickness(2);
+                ProductsButtonBorder.BorderThickness = new Thickness(0);
+                OrdersButtonBorder.BorderThickness = new Thickness(0);
+                SupplierButtonBorder.BorderThickness = new Thickness(0);
+                StockButtonBorder.BorderThickness = new Thickness(0);
+            }
+        }
+        private void Orders_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                deliveriesGrid.ItemsSource = orderList;
+                DeliveryButtonBorder.BorderThickness = new Thickness(0);
+                ProductsButtonBorder.BorderThickness = new Thickness(0);
+                OrdersButtonBorder.BorderThickness = new Thickness(2);
+                SupplierButtonBorder.BorderThickness = new Thickness(0);
+                StockButtonBorder.BorderThickness = new Thickness(0);
+            }
+        }
+
+        private void Stock_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                deliveriesGrid.ItemsSource = warehouseList;
+                DeliveryButtonBorder.BorderThickness = new Thickness(0);
+                ProductsButtonBorder.BorderThickness = new Thickness(0);
+                OrdersButtonBorder.BorderThickness = new Thickness(0);
+                SupplierButtonBorder.BorderThickness = new Thickness(0);
+                StockButtonBorder.BorderThickness = new Thickness(2);
+            }
+        }
+
+        private void Supplier_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                deliveriesGrid.ItemsSource = supliereList;
+                DeliveryButtonBorder.BorderThickness = new Thickness(0);
+                ProductsButtonBorder.BorderThickness = new Thickness(0);
+                OrdersButtonBorder.BorderThickness = new Thickness(0);
+                SupplierButtonBorder.BorderThickness = new Thickness(2);
+                StockButtonBorder.BorderThickness = new Thickness(0);
+            }
+        }
+
+        private void Products_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                deliveriesGrid.ItemsSource = productList;
+                DeliveryButtonBorder.BorderThickness = new Thickness(0);
+                ProductsButtonBorder.BorderThickness = new Thickness(2);
+                OrdersButtonBorder.BorderThickness = new Thickness(0);
+                SupplierButtonBorder.BorderThickness = new Thickness(0);
+                StockButtonBorder.BorderThickness = new Thickness(0);
             }
         }
     }
