@@ -14,4 +14,5 @@ namespace ConectivoApp.Data
         public int NowQuantiy { get; set; }
         public int Priority { get; set; }
     }
+
 }

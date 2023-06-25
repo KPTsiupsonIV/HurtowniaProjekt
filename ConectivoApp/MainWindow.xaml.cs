@@ -14,9 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.EntityFrameworkCore;
-using ConectivoApp;
 using System.Configuration;
 using System.Windows.Threading;
+using ConectivoApp.Queries;
+using System.Security.AccessControl;
 
 namespace ConectivoApp
 {
@@ -29,28 +30,32 @@ namespace ConectivoApp
         private bool dayswitch = true;
         private DispatcherTimer timer;
         public LoginWindow loginWindow = new LoginWindow();
-        public List<Delivery> deliveryList { get; set; }
+        private char queType =' '; 
         public List<Employee> employeeList { get; set; }
-        public List<Order> orderList { get; set; }
+       
         public List<Product> productList { get; set; }
-        public List<Warehouse> warehouseList { get; set; }
-        public List<Supplier> supliereList { get; set; }
+        
+      
+
+        private DeliveryQuery deliveryQuery = new DeliveryQuery();
+        private OrdersQuery ordersQuery = new OrdersQuery();
+        private SupplierQuery supplierQuery = new SupplierQuery();
+        private WarehouseQuery warehouseQuery = new WarehouseQuery();
+      
 
         public MainWindow()
         {
             InitializeComponent();
             using(HurtowniaContext _context = new HurtowniaContext())
             {
-               
-                deliveryList = _context.Deliveries.ToList();
                 employeeList = _context.Employees.ToList();
-                orderList = _context.Orders.ToList();
                 productList = _context.Products.ToList();
-                warehouseList = _context.Warehouses.ToList();
-                supliereList = _context.Suppliers.ToList();
-
+               
+                
             }
+            
             timer = new DispatcherTimer();
+            
 
             // Set the interval (e.g., 1 second)
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -60,7 +65,10 @@ namespace ConectivoApp
 
             // Start the timer
             timer.Start();
-            
+            if(login == 1)
+            {
+                timer.Stop();
+            }
 
            
 
@@ -94,17 +102,25 @@ namespace ConectivoApp
 
         }
 
-       
 
-        
 
+
+        /// <summary>
+        /// Loggin Button logic
+        /// </summary>
         private void Loggin_Click(object sender, RoutedEventArgs e)
         {
-            if(login == 0) { 
-                loginWindow.Show(); 
-                loginButton.Content = "Log Off"; } 
-            else {
-                App.Current.Shutdown();
+            if(login == 0)
+            {
+                loginWindow.Show();
+            }
+            else
+            {
+                
+                Application.Current.Shutdown();
+
+
+
             }
 
         }
@@ -118,13 +134,16 @@ namespace ConectivoApp
             {
                 IdText.Text = $"ID: {loginWindow.GetId()}";
                 loginWindow.Hide();
+                loginButton.Content = "Log Off";
             }
         }
         private void DeliveryButton_Click(object sender, RoutedEventArgs e)
         {
             if (login == 1)
             {
-                deliveriesGrid.ItemsSource = deliveryList;
+                queType = 'd';
+                searchText.Text = "Search by delivery ID";
+                deliveriesGrid.ItemsSource = deliveryQuery.deliveryList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(2);
                 ProductsButtonBorder.BorderThickness = new Thickness(0);
                 OrdersButtonBorder.BorderThickness = new Thickness(0);
@@ -136,7 +155,9 @@ namespace ConectivoApp
         {
             if (login == 1)
             {
-                deliveriesGrid.ItemsSource = orderList;
+                queType = 'o';
+                searchText.Text = "Search by employee ID";
+                deliveriesGrid.ItemsSource = ordersQuery.ordersList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(0);
                 OrdersButtonBorder.BorderThickness = new Thickness(2);
@@ -149,7 +170,9 @@ namespace ConectivoApp
         {
             if (login == 1)
             {
-                deliveriesGrid.ItemsSource = warehouseList;
+                queType = 'w';
+                searchText.Text = "Search warehouse by ID";
+                deliveriesGrid.ItemsSource = warehouseQuery.warehouseList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(0);
                 OrdersButtonBorder.BorderThickness = new Thickness(0);
@@ -162,7 +185,9 @@ namespace ConectivoApp
         {
             if (login == 1)
             {
-                deliveriesGrid.ItemsSource = supliereList;
+                queType = 's';
+                searchText.Text = "Search by supplier Nip";
+                deliveriesGrid.ItemsSource = supplierQuery.supplierList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(0);
                 OrdersButtonBorder.BorderThickness = new Thickness(0);
@@ -175,6 +200,7 @@ namespace ConectivoApp
         {
             if (login == 1)
             {
+                queType = 'p';
                 deliveriesGrid.ItemsSource = productList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(2);
@@ -182,6 +208,41 @@ namespace ConectivoApp
                 SupplierButtonBorder.BorderThickness = new Thickness(0);
                 StockButtonBorder.BorderThickness = new Thickness(0);
             }
+        }
+
+        private void Search_Button(object sender, RoutedEventArgs e)
+        {
+            switch (queType)
+            {
+                case 'd':
+                    int.TryParse(searchText.Text, out int idDelivery);
+                    deliveriesGrid.ItemsSource = deliveryQuery.GetDeliveryById(idDelivery);
+                    break;
+                case 'o':
+                    
+                    int.TryParse(searchText.Text, out int id);
+                    deliveriesGrid.ItemsSource = ordersQuery.GetOrdersByEmployeeId(id);
+                    break;
+                case 'p':
+
+                    break;
+                case 's':
+                    deliveriesGrid.ItemsSource = supplierQuery.GetSupplierByNip(searchText.Text);
+                    break;
+                case 'w':
+                    int.TryParse(searchText.Text, out int idWarehouse);
+                    deliveriesGrid.ItemsSource = warehouseQuery.GetWarehouseById(idWarehouse);
+                    break;
+                default:
+                    
+                    break;
+            }
+
+
+
+
+
+
         }
     }
 }
