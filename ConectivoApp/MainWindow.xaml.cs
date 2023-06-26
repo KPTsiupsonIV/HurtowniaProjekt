@@ -41,7 +41,7 @@ namespace ConectivoApp
         private OrdersQuery ordersQuery = new OrdersQuery();
         private SupplierQuery supplierQuery = new SupplierQuery();
         private WarehouseQuery warehouseQuery = new WarehouseQuery();
-      
+        private ProductsQuery productsQuery = new ProductsQuery();
 
         public MainWindow()
         {
@@ -201,6 +201,7 @@ namespace ConectivoApp
             if (login == 1)
             {
                 queType = 'p';
+                searchText.Text = "Search by product name";
                 deliveriesGrid.ItemsSource = productList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(2);
@@ -224,7 +225,7 @@ namespace ConectivoApp
                     deliveriesGrid.ItemsSource = ordersQuery.GetOrdersByEmployeeId(id);
                     break;
                 case 'p':
-
+                    deliveriesGrid.ItemsSource = productsQuery.GetProductsByProductName(searchText.Text);
                     break;
                 case 's':
                     deliveriesGrid.ItemsSource = supplierQuery.GetSupplierByNip(searchText.Text);
