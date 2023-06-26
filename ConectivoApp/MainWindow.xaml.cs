@@ -33,8 +33,7 @@ namespace ConectivoApp
         private char queType =' '; 
         public List<Employee> employeeList { get; set; }
        
-        public List<Product> productList { get; set; }
-        
+    
       
 
         private DeliveryQuery deliveryQuery = new DeliveryQuery();
@@ -49,9 +48,6 @@ namespace ConectivoApp
             using(HurtowniaContext _context = new HurtowniaContext())
             {
                 employeeList = _context.Employees.ToList();
-                productList = _context.Products.ToList();
-               
-                
             }
             
             timer = new DispatcherTimer();
@@ -220,7 +216,6 @@ namespace ConectivoApp
                     deliveriesGrid.ItemsSource = deliveryQuery.GetDeliveryById(idDelivery);
                     break;
                 case 'o':
-                    
                     int.TryParse(searchText.Text, out int id);
                     deliveriesGrid.ItemsSource = ordersQuery.GetOrdersByEmployeeId(id);
                     break;
@@ -235,7 +230,6 @@ namespace ConectivoApp
                     deliveriesGrid.ItemsSource = warehouseQuery.GetWarehouseById(idWarehouse);
                     break;
                 default:
-                    
                     break;
             }
 
