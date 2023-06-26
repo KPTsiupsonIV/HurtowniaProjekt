@@ -220,7 +220,7 @@ namespace ConectivoApp
                     deliveriesGrid.ItemsSource = ordersQuery.GetOrdersByEmployeeId(id);
                     break;
                 case 'p':
-                    deliveriesGrid.ItemsSource = productsQuery.GetProductsByProductName(searchText.Text);
+                    deliveriesGrid.ItemsSource = productsQuery.GetProductsByName(searchText.Text);
                     break;
                 case 's':
                     deliveriesGrid.ItemsSource = supplierQuery.GetSupplierByNip(searchText.Text);
