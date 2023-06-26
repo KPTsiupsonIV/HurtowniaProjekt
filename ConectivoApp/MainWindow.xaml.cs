@@ -47,8 +47,10 @@ namespace ConectivoApp
             InitializeComponent();
             using(HurtowniaContext _context = new HurtowniaContext())
             {
+                _context.Database.EnsureCreated();
                 employeeList = _context.Employees.ToList();
             }
+            
             
             timer = new DispatcherTimer();
             
@@ -168,6 +170,7 @@ namespace ConectivoApp
             {
                 queType = 'w';
                 searchText.Text = "Search warehouse by ID";
+                warehouseQuery.Populate();
                 deliveriesGrid.ItemsSource = warehouseQuery.warehouseList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(0);
@@ -198,7 +201,7 @@ namespace ConectivoApp
             {
                 queType = 'p';
                 searchText.Text = "Search by product name";
-                deliveriesGrid.ItemsSource = productList;
+                deliveriesGrid.ItemsSource = productsQuery.productsList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(2);
                 OrdersButtonBorder.BorderThickness = new Thickness(0);
@@ -220,7 +223,7 @@ namespace ConectivoApp
                     deliveriesGrid.ItemsSource = ordersQuery.GetOrdersByEmployeeId(id);
                     break;
                 case 'p':
-                    deliveriesGrid.ItemsSource = productsQuery.GetProductsByProductName(searchText.Text);
+                    deliveriesGrid.ItemsSource = productsQuery.GetProductsByName(searchText.Text);
                     break;
                 case 's':
                     deliveriesGrid.ItemsSource = supplierQuery.GetSupplierByNip(searchText.Text);
@@ -232,12 +235,13 @@ namespace ConectivoApp
                 default:
                     break;
             }
+        }
 
+        
 
-
-
-
-
+        private void searchText_GotFocus(object sender, RoutedEventArgs e)
+        {
+            searchText.Text = string.Empty;
         }
     }
 }

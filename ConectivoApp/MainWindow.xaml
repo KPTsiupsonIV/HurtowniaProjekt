@@ -55,7 +55,7 @@
 
         <!-- Main -->
         <Grid Grid.Column="1" Margin="0,12,0,0" Grid.Row="1">
-            <DataGrid x:Name="deliveriesGrid" Margin="10,65,10,10"
+            <DataGrid x:Name="deliveriesGrid" Margin="10,65,10,10" Foreground="#464747" 
                        >
 
             </DataGrid>
@@ -63,7 +63,7 @@
                 <Image x:Name="searchIcon" Source="images\Search2.png" RenderTransformOrigin="0.5,0.5" Height="42">
                 </Image>
             </Button>
-            <TextBox x:Name="searchText" Text="podaj id" Margin="74,6,337,309" Background="Transparent" Foreground="#177cb3" FontSize="16" FontWeight="DemiBold" BorderThickness="0,0,0,3" BorderBrush="#177cb3"></TextBox>
+            <TextBox x:Name="searchText" Text="podaj id" Margin="74,6,337,309" Background="Transparent" Foreground="#177cb3" FontSize="16" FontWeight="DemiBold" BorderThickness="0,0,0,3" BorderBrush="#177cb3" GotFocus="searchText_GotFocus" ></TextBox>
 
 
             <Button x:Name="SaveButton"  Content="SAVE" Margin="588,8,10,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"></Button>
