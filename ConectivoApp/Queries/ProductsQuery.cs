@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace ConectivoApp.Queries
 {
-    internal class SupplierQuery
+    internal class ProductsQuery
     {
-        public List<Supplier> supplierList { get; set; }
+        public List<Product> productsList { get; set; }
 
-        public SupplierQuery()
+        public ProductsQuery()
         {
             using (HurtowniaContext _context = new HurtowniaContext())
             {
-                supplierList = _context.Suppliers.ToList();
+                productsList = _context.Products.ToList();
             }
         }
 
-        public List<Supplier> GetSupplierByNip(string nip)
+        public List<Product> GetProductsByName(string name)
         {
-            List<Supplier> supplierByNip = new List<Supplier>();
-            foreach (Supplier supplier in supplierList)
+            List<Product> productsByName = new List<Product>();
+            foreach (Product product in productsList)
             {
-                if (supplier.Nip == nip)
+                if (product.ProductName == name)
                 {
-                    supplierByNip.Add(supplier);
+                    productsByName.Add(product);
                 }
             }
-            return supplierByNip;
+            return productsByName;
         }
     }
 }
