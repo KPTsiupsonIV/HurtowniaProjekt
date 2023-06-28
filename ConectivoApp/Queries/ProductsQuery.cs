@@ -31,5 +31,12 @@ namespace ConectivoApp.Queries
             }
             return productsByName;
         }
+        public void AddProduct(Product product)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+               _context.Products.Add(product);
+            }
+        }
     }
 }

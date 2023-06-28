@@ -31,5 +31,20 @@ namespace ConectivoApp.Queries
             }
             return deliveryById;
         }
+        public void DeliveryAdd(string productName,int quantity,decimal priceBrutto,decimal priceNetto,DateTime deliveryDate,string supplierName)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                Delivery delivery = new Delivery();
+                delivery.ProductName = productName;
+                delivery.Quantity = quantity;
+                delivery.PriceBrutto = priceBrutto;
+                delivery.PriceNetto = priceNetto;
+                delivery.DeliveryDate = deliveryDate;
+                delivery.SupplierName = supplierName;
+
+                _context.Deliveries.Add(delivery);
+            }
+        }
     }
 }

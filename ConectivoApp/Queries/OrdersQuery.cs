@@ -54,5 +54,13 @@ namespace ConectivoApp.Queries
             }
         }
 
+        public void OrdersAdd(Order orders)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                _context.Orders.Add(orders);
+            }
+        }
+
     }
 }

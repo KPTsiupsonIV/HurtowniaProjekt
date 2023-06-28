@@ -31,5 +31,12 @@ namespace ConectivoApp.Queries
             }
             return supplierByNip;
         }
+        public void AddSupplier(Supplier supplier)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                _context.Suppliers.Add(supplier);
+            }
+        }
     }
 }

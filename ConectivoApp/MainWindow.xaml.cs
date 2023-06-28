@@ -247,22 +247,30 @@ namespace ConectivoApp
             switch (queType)
                 {
                     case 'd':
-
+                        DeliveryAdd deliveryAdd = new DeliveryAdd();
+                        deliveryAdd.Show();
                         break;
                     case 'o':
-
+                        OrdersAdd ordersAdd = new OrdersAdd();
+                        ordersAdd.Show();
                         break;
                     case 'p':
-
+                        ProductsAdd productsAdd = new ProductsAdd();
+                        productsAdd.Show();
                         break;
                     case 's':
-
+                        SupplierAdd supplierAdd = new SupplierAdd();
+                        supplierAdd.Show();
                         break;
                     case 'w':
                         WarehouseAdd warehouseAdd = new WarehouseAdd();
                         warehouseAdd.Show();
                         break;
                     default:
+                        if(login == 1)
+                        {
+                            MessageBox.Show("You have not selected que to add into");
+                        }
                         break;
                 }
             }
