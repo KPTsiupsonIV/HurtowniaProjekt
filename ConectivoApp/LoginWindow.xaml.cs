@@ -33,7 +33,7 @@ namespace ConectivoApp
             InitializeComponent();
             using (HurtowniaContext _context = new HurtowniaContext())
             {
-                _context.Database.EnsureCreated();
+                /*context.Database.EnsureCreated();
                 Employee employee = new Employee();
              
                 employee.Password = "test";
@@ -41,16 +41,17 @@ namespace ConectivoApp
                 employee.Pension = 1;
                 employee.Commision = 1;
                 employee.EmployeeName = "test";
-                /*
+               
                          public int Id { get; set; }
             public string EmployeeName { get; set; }
             public string EmployeeSurname { get; set; }
             public int Commision { get; set; }
             public int Pension { get; set; }
             public string Password { get; set; }
-                */
+                
                 _context.Employees.Add(employee);
                 _context.SaveChanges();
+                */
                 employeeList = _context.Employees.ToList();
             }
              

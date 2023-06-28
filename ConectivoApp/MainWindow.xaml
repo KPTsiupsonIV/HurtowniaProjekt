@@ -67,7 +67,7 @@
 
 
             <Button x:Name="SaveButton"  Content="SAVE" Margin="588,8,10,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"></Button>
-            <Button x:Name="SaveButton_Copy"  Content="ADD" Margin="506,8,92,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"/>
+            <Button x:Name="AddButton"  Content="ADD" Margin="506,8,92,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold" Click="AddButton_Click" />
 
 
         </Grid>

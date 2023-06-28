@@ -21,6 +21,22 @@ namespace ConectivoApp.Queries
             }
         }
 
+        public void WarehouseAdd(string name,int quan, int need,int prio)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                Warehouse warehouse = new Warehouse();
+                warehouse.ProductName = name;
+                warehouse.NowQuantiy = quan;
+                warehouse.Priority = prio;
+                warehouse.NeededQuantity = need;
+                _context.Warehouses.Add(warehouse);
+                _context.SaveChanges();
+
+
+            }
+        }
+
         public List<Warehouse> GetWarehouseById(int id)
         {
             List<Warehouse> GetWarehouseById = new List<Warehouse>();

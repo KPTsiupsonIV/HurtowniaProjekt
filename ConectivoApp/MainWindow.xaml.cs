@@ -18,6 +18,7 @@ using System.Configuration;
 using System.Windows.Threading;
 using ConectivoApp.Queries;
 using System.Security.AccessControl;
+using ConectivoApp.AddingWindows;
 
 namespace ConectivoApp
 {
@@ -114,11 +115,7 @@ namespace ConectivoApp
             }
             else
             {
-                
                 Application.Current.Shutdown();
-
-
-
             }
 
         }
@@ -170,7 +167,7 @@ namespace ConectivoApp
             {
                 queType = 'w';
                 searchText.Text = "Search warehouse by ID";
-                warehouseQuery.Populate();
+                //warehouseQuery.Populate();
                 deliveriesGrid.ItemsSource = warehouseQuery.warehouseList;
                 DeliveryButtonBorder.BorderThickness = new Thickness(0);
                 ProductsButtonBorder.BorderThickness = new Thickness(0);
@@ -237,11 +234,42 @@ namespace ConectivoApp
             }
         }
 
-        
 
         private void searchText_GotFocus(object sender, RoutedEventArgs e)
         {
             searchText.Text = string.Empty;
         }
-    }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+            switch (queType)
+                {
+                    case 'd':
+
+                        break;
+                    case 'o':
+
+                        break;
+                    case 'p':
+
+                        break;
+                    case 's':
+
+                        break;
+                    case 'w':
+                        WarehouseAdd warehouseAdd = new WarehouseAdd();
+                        warehouseAdd.Show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+
+            }
+            }
+        }
 }
