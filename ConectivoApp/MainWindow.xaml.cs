@@ -293,7 +293,8 @@ namespace ConectivoApp
                 switch (queType)
                 {
                     case 'd':
-                       
+                       DeliveryUpdate deliveryUpdate = new DeliveryUpdate();
+                        deliveryUpdate.Show();
                         break;
                     case 'o':
                        

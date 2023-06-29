@@ -36,6 +36,7 @@ namespace ConectivoApp.Queries
             using (HurtowniaContext _context = new HurtowniaContext())
             {
                 _context.Suppliers.Add(supplier);
+                _context.SaveChanges();
             }
         }
     }

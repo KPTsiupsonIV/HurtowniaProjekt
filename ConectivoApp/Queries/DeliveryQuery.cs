@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConectivoApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConectivoApp.Queries
 {
@@ -22,7 +23,7 @@ namespace ConectivoApp.Queries
         public List<Delivery> GetDeliveryById(int id)
         {
             List<Delivery> deliveryById = new List<Delivery>();
-            foreach(Delivery delivery in deliveryList)
+            foreach (Delivery delivery in deliveryList)
             {
                 if (delivery.Id == id)
                 {
@@ -31,7 +32,7 @@ namespace ConectivoApp.Queries
             }
             return deliveryById;
         }
-        public void DeliveryAdd(string productName,int quantity,decimal priceBrutto,decimal priceNetto,DateTime deliveryDate,string supplierName)
+        public void DeliveryAdd(string productName, int quantity, decimal priceBrutto, decimal priceNetto, DateTime deliveryDate, string supplierName)
         {
             using (HurtowniaContext _context = new HurtowniaContext())
             {
@@ -44,7 +45,22 @@ namespace ConectivoApp.Queries
                 delivery.SupplierName = supplierName;
 
                 _context.Deliveries.Add(delivery);
+                _context.SaveChanges();
             }
+        }
+        public void Update(Delivery delivery)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                var deliveryToUpdate = _context.Deliveries.FirstOrDefault(w => w.Id == delivery.Id);
+                deliveryToUpdate.Quantity = delivery.Quantity;
+                deliveryToUpdate.PriceBrutto = delivery.PriceBrutto;
+                deliveryToUpdate.PriceNetto= delivery.PriceNetto;
+                deliveryToUpdate.DeliveryDate = delivery.DeliveryDate;
+                
+                _context.SaveChanges();
+            }
+
         }
     }
 }
