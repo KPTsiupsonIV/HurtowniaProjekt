@@ -19,6 +19,7 @@ using System.Windows.Threading;
 using ConectivoApp.Queries;
 using System.Security.AccessControl;
 using ConectivoApp.AddingWindows;
+using ConectivoApp.UpdatingWindows;
 
 namespace ConectivoApp
 {
@@ -60,7 +61,9 @@ namespace ConectivoApp
             timer.Interval = TimeSpan.FromSeconds(1);
 
             // Subscribe to the Tick event
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
             timer.Tick += Timer_Tick;
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
 
             // Start the timer
             timer.Start();
@@ -81,9 +84,11 @@ namespace ConectivoApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var color = MainGrid.Background as SolidColorBrush;
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var newColor = color.Color.Equals(Color.FromArgb(0xFF, 0xED, 0xED, 0xED)) ?
                             new SolidColorBrush(Color.FromArgb(0xFF, 0xB8, 0xB9, 0xBA)):
                             new SolidColorBrush(Color.FromArgb(0xFF, 0xED, 0xED, 0xED));
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             MainGrid.Background = newColor;
             if (dayswitch)
@@ -271,13 +276,52 @@ namespace ConectivoApp
                         {
                             MessageBox.Show("You have not selected que to add into");
                         }
+                        else
+                        {
+                            MessageBox.Show("You are not logged");
+                        }
+                        break;
+                }
+            }
+           
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                switch (queType)
+                {
+                    case 'd':
+                       
+                        break;
+                    case 'o':
+                       
+                        break;
+                    case 'p':
+                        
+                        break;
+                    case 's':
+                        
+                        break;
+                    case 'w':
+                       WarehouseUpdate warehouseUpdate = new WarehouseUpdate();
+                      warehouseUpdate.Show();
+                        
+                        break;
+                    default:
+                        if (login == 1)
+                        {
+                            MessageBox.Show("You have not selected que whre you want to make changes");
+                        }
                         break;
                 }
             }
             else
             {
+                MessageBox.Show("You are not logged");
+            }
 
-            }
-            }
         }
+    }
 }

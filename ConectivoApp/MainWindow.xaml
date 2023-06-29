@@ -59,15 +59,16 @@
                        >
 
             </DataGrid>
-            <Button Height="36" VerticalAlignment="Bottom" Margin="23,0,601,317" Background="Transparent" Foreground="AntiqueWhite" BorderThickness="0" Click="Search_Button">
-                <Image x:Name="searchIcon" Source="images\Search2.png" RenderTransformOrigin="0.5,0.5" Height="42">
+            <Button Height="36" VerticalAlignment="Bottom" Margin="18,0,606,309" Background="Transparent" Foreground="AntiqueWhite" BorderThickness="0" Click="Search_Button">
+                <Image x:Name="searchIcon" Source="images\Search2.png" RenderTransformOrigin="0.5,0.5" Height="36" Width="42">
                 </Image>
             </Button>
             <TextBox x:Name="searchText" Text="podaj id" Margin="74,6,337,309" Background="Transparent" Foreground="#177cb3" FontSize="16" FontWeight="DemiBold" BorderThickness="0,0,0,3" BorderBrush="#177cb3" GotFocus="searchText_GotFocus" ></TextBox>
 
 
-            <Button x:Name="SaveButton"  Content="SAVE" Margin="588,8,10,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"></Button>
+            <Button x:Name="RemoveButton"  Content="REMOVE" Margin="588,8,10,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"></Button>
             <Button x:Name="AddButton"  Content="ADD" Margin="506,8,92,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold" Click="AddButton_Click" />
+            <Button x:Name="UpdateButton"  Content="UPDATE" Margin="424,8,174,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold" Click="UpdateButton_Click"/>
 
 
         </Grid>

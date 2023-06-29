@@ -50,6 +50,28 @@ namespace ConectivoApp.Queries
             return GetWarehouseById;
         }
 
+        public void Update(Warehouse warehouseBase)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                Warehouse warehouse = _context.Warehouses.FirstOrDefault(w => w.Id == warehouseBase.Id);
+
+                if (warehouse != null)
+                {
+                    // Modify the properties of the entity with the new values
+                    warehouse.ProductName = warehouseBase.ProductName;
+                    warehouse.NeededQuantity = warehouseBase.NeededQuantity;
+                    warehouse.Priority = warehouseBase.Priority;
+                    warehouse.NowQuantiy = warehouseBase.NowQuantiy;
+
+                    // Save the changes to persist the updates in the database
+                    _context.SaveChanges();
+                }
+
+
+            }
+        }
+
         public void Populate()
         {
             using (var context = new HurtowniaContext())

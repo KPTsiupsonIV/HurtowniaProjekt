@@ -11,7 +11,7 @@ namespace ConectivoApp
     public class LoginLogic
     {
         public static int Id { get; set; }
-        public static string Password { get; set; }
+        public static string? Password { get; set; }
         public static int isLoged {get; set; }
 
         public bool IsLogged(int identyfikator, string haslo,List<Employee> lista)
