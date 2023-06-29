@@ -297,7 +297,8 @@ namespace ConectivoApp
                         deliveryUpdate.Show();
                         break;
                     case 'o':
-                       
+                       OrderUpdate orderUpdate = new OrderUpdate();
+                        orderUpdate.Show();
                         break;
                     case 'p':
                         

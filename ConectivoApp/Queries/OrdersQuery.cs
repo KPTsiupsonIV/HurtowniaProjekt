@@ -63,5 +63,16 @@ namespace ConectivoApp.Queries
             }
         }
 
+        public void Update(Order order)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                Order orderToUpdate = _context.Orders.FirstOrDefault(w => w.Id == order.Id);
+                orderToUpdate.Quantiy = order.Quantiy;
+                orderToUpdate.Price = order.Price;
+                orderToUpdate.CommisionValue = order.CommisionValue;
+                orderToUpdate.IdEmployee = order.IdEmployee;
+            }
+        }
     }
 }
