@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConectivoApp.UpdatingWindows"
         mc:Ignorable="d"
-         ResizeMode="NoResize"
+        ResizeMode="NoResize"
         Title="DeliveryUpdate" Height="500" Width="480">
     <Grid Background="#ededed">
         <StackPanel Orientation="Horizontal" Width="200" Height="64"  VerticalAlignment="Top" Margin="160,0,90,0">

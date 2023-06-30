@@ -53,5 +53,15 @@ namespace ConectivoApp.Queries
                 _context.SaveChanges();
             }
         }
+
+        public void Remove(int id)
+        {
+            using(HurtowniaContext _context = new HurtowniaContext())
+            {
+                var supplier = _context.Suppliers.SingleOrDefault( s =>  s.Id == id);
+                _context.Remove(supplier);
+                _context.SaveChanges();
+            }
+        }
     }
 }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 
 namespace ConectivoApp
 {
@@ -12,33 +11,46 @@ namespace ConectivoApp
     {
         public static int Id { get; set; }
         public static string? Password { get; set; }
-        public static int isLoged {get; set; }
+        public static int IsLogged { get; set; }
 
-        public bool IsLogged(int identyfikator, string haslo,List<Employee> lista)
+        /// <summary>
+        /// Checks if the provided identifier and password match an employee in the given list.
+        /// </summary>
+        /// <param name="identifier">The identifier to check.</param>
+        /// <param name="password">The password to check.</param>
+        /// <param name="employeeList">The list of employees.</param>
+        /// <returns>True if the identifier and password match, otherwise false.</returns>
+        public bool IsLoggedIn(int identifier, string password, List<Employee> employeeList)
         {
-            foreach (var employee in lista)
+            foreach (var employee in employeeList)
             {
-                if (identyfikator == employee.Id && haslo == employee.Password)
+                if (identifier == employee.Id && password == employee.Password)
                 {
-                    
                     Password = employee.Password;
                     Id = employee.Id;
-                    isLoged = 1;
+                    IsLogged = 1;
                     return true;
                 }
-
             }
             return false;
         }
 
+        /// <summary>
+        /// Gets the login state.
+        /// </summary>
+        /// <returns>The login state.</returns>
         public int GetState()
         {
-            return isLoged;
+            return IsLogged;
         }
+
+        /// <summary>
+        /// Gets the logged-in user's ID.
+        /// </summary>
+        /// <returns>The user's ID.</returns>
         public int GetId()
         {
             return Id;
         }
-
     }
 }

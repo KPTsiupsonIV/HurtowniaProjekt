@@ -74,5 +74,16 @@ namespace ConectivoApp.Queries
                 orderToUpdate.IdEmployee = order.IdEmployee;
             }
         }
+
+        public void Remove(int id)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                var order = _context.Orders.SingleOrDefault(o => o.Id == id);
+                _context.Remove(order);
+                _context.SaveChanges();
+            }
+        }
+
     }
 }

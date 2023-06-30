@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ConectivoApp.AddingWindows"
         mc:Ignorable="d"
       ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen"
+        
         Title="OrdersAdd" Height="450" Width="450">
     <Grid Background="#ededed">
         <StackPanel Orientation="Horizontal" Width="200" Height="70"  VerticalAlignment="Top" Margin="177,10,73,0">

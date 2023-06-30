@@ -66,7 +66,7 @@
             <TextBox x:Name="searchText" Text="podaj id" Margin="74,6,337,309" Background="Transparent" Foreground="#177cb3" FontSize="16" FontWeight="DemiBold" BorderThickness="0,0,0,3" BorderBrush="#177cb3" GotFocus="searchText_GotFocus" ></TextBox>
 
 
-            <Button x:Name="RemoveButton"  Content="REMOVE" Margin="588,8,10,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold"></Button>
+            <Button x:Name="RemoveButton"  Content="REMOVE" Margin="588,8,10,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold" Click="RemoveButton_Click"></Button>
             <Button x:Name="AddButton"  Content="ADD" Margin="506,8,92,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold" Click="AddButton_Click" />
             <Button x:Name="UpdateButton"  Content="UPDATE" Margin="424,8,174,309" Background="#464747" Foreground="#bccee6" FontWeight="DemiBold" Click="UpdateButton_Click"/>
 

@@ -55,7 +55,7 @@ namespace ConectivoApp
                 haslo = password.Password.ToString();
                 LoginLogic logika = new LoginLogic();
 
-                if (logika.IsLogged(Id, haslo, employeeList))
+                if (logika.IsLoggedIn(Id, haslo, employeeList))
                 {
                     state = 1;
                     textIfBad.Text = string.Empty;

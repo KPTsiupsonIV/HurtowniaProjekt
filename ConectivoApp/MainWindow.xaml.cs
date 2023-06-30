@@ -20,6 +20,7 @@ using ConectivoApp.Queries;
 using System.Security.AccessControl;
 using ConectivoApp.AddingWindows;
 using ConectivoApp.UpdatingWindows;
+using ConectivoApp.RemoveWindows;
 
 namespace ConectivoApp
 {
@@ -272,18 +273,15 @@ namespace ConectivoApp
                         warehouseAdd.Show();
                         break;
                     default:
-                        if(login == 1)
-                        {
-                            MessageBox.Show("You have not selected que to add into");
-                        }
-                        else
-                        {
-                            MessageBox.Show("You are not logged");
-                        }
+                        MessageBox.Show("You have not selected que to add into");
                         break;
                 }
             }
-           
+            else
+            {
+                MessageBox.Show("You are not logged");
+            }
+
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
@@ -322,6 +320,43 @@ namespace ConectivoApp
                 MessageBox.Show("You are not logged");
             }
 
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (login == 1)
+            {
+                switch (queType)
+                {
+                    case 'd':
+                        RemoveDelivery delivery = new RemoveDelivery();
+                        delivery.Show();
+                        break;
+                    case 'o':
+                        RemoveOrder order = new RemoveOrder();
+                        order.Show();
+                        break;
+                    case 'p':
+                        RemoveProduct product = new RemoveProduct();
+                        product.Show();
+                        break;
+                    case 's':
+                        RemoveSupplier supplier = new RemoveSupplier();
+                        supplier.Show();
+                        break;
+                    case 'w':
+                        RemoveWarehouse warehouse = new RemoveWarehouse();
+                        warehouse.Show();
+                        break;
+                    default:
+                        MessageBox.Show("You have not selected que whre you want to make changes");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("You are not logged");
+            }
         }
     }
 }

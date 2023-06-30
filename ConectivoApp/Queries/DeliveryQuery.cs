@@ -55,12 +55,22 @@ namespace ConectivoApp.Queries
                 var deliveryToUpdate = _context.Deliveries.FirstOrDefault(w => w.Id == delivery.Id);
                 deliveryToUpdate.Quantity = delivery.Quantity;
                 deliveryToUpdate.PriceBrutto = delivery.PriceBrutto;
-                deliveryToUpdate.PriceNetto= delivery.PriceNetto;
+                deliveryToUpdate.PriceNetto = delivery.PriceNetto;
                 deliveryToUpdate.DeliveryDate = delivery.DeliveryDate;
-                
+
                 _context.SaveChanges();
             }
 
+        }
+
+        public void Remove(int id)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                var delivery = _context.Deliveries.SingleOrDefault(w => w.Id == id);
+                _context.Remove(delivery);
+                _context.SaveChanges();
+            }
         }
     }
 }

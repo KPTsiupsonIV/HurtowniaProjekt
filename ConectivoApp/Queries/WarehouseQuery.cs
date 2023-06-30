@@ -72,6 +72,16 @@ namespace ConectivoApp.Queries
             }
         }
 
+        public void Remove(int id)
+        {
+            using(HurtowniaContext _context = new HurtowniaContext())
+            {
+                var warehouse = _context.Warehouses.SingleOrDefault( w => w.Id == id);
+                _context.Warehouses.Remove(warehouse);
+                _context.SaveChanges();
+            }
+        }
+
         public void Populate()
         {
             using (var context = new HurtowniaContext())

@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:ConectivoApp.UpdatingWindows"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterOwner"
         Title="ProductsUpdate" Height="450" Width="450">
     <Grid Background="#ededed">
 
