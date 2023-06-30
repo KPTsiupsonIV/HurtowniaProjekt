@@ -301,21 +301,19 @@ namespace ConectivoApp
                         orderUpdate.Show();
                         break;
                     case 'p':
-                        
+                        ProductsUpdate productsUpdate = new ProductsUpdate();
+                        productsUpdate.Show();
                         break;
                     case 's':
-                        
+                        SupplierUpdate supplierUpdate = new SupplierUpdate();
+                        supplierUpdate.Show();
                         break;
                     case 'w':
                        WarehouseUpdate warehouseUpdate = new WarehouseUpdate();
                       warehouseUpdate.Show();
-                        
                         break;
                     default:
-                        if (login == 1)
-                        {
-                            MessageBox.Show("You have not selected que whre you want to make changes");
-                        }
+                        MessageBox.Show("You have not selected que whre you want to make changes");
                         break;
                 }
             }

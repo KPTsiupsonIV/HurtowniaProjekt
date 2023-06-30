@@ -25,7 +25,7 @@
             <Label Content="Product Name:" Margin="0,100,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
             <Label Content="Price Buy:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
             <Label Content="Price Sell:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="Phone" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="Tax:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
 
         </StackPanel>
         <Button x:Name="AddButton" Width="60" Height="40" Content="ADD" Margin="170,299,170,45" Click="AddButton_Click" Background="#464747" Foreground="#FF32ADD6" FontWeight="DemiBold"></Button>

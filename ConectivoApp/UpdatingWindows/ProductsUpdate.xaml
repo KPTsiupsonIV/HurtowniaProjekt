@@ -1,4 +1,4 @@
-﻿<Window x:Class="ConectivoApp.UpdatingWindows.OrderUpdate"
+﻿<Window x:Class="ConectivoApp.UpdatingWindows.ProductsUpdate"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
-        Title="OrderUpdate" Height="450" Width="450">
+        Title="ProductsUpdate" Height="450" Width="450">
     <Grid Background="#ededed">
 
         <StackPanel Orientation="Horizontal" Width="200" Height="63"  VerticalAlignment="Top" Margin="176,0,74,0">
@@ -18,19 +18,19 @@
         </StackPanel>
         <StackPanel Height="Auto" Width="120" Margin="225,-25,105,110" >
             <TextBox x:Name="Id"  Height="30"   Margin="0,100,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"/>
-            <TextBox x:Name="Quantiy"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="Price"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="IdEmployee"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="CommisionValue"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="ProductName"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="PriceBuy"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="PriceSell"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="Tax"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
 
 
         </StackPanel>
         <StackPanel Height="Auto" Margin="84,-20,241,130" >
             <Label Content="ID:" Margin="0,100,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="Quantiy:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="Price:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="ID Employee" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="CommisionValue" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="Product Name:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="Price Buy:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="Price Sell:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="Tax:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
 
         </StackPanel>
         <Button x:Name="UpdateButton" Width="60" Height="40" Content="UPDATE" Margin="170,299,170,45" Click="UpdateButton_Click" Background="#464747" Foreground="#FF32ADD6" FontWeight="DemiBold"></Button>

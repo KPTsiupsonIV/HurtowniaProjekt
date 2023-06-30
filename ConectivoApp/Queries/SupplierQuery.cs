@@ -39,5 +39,19 @@ namespace ConectivoApp.Queries
                 _context.SaveChanges();
             }
         }
+        public void Update(Supplier supplier)
+        {
+            using (HurtowniaContext _context = new HurtowniaContext())
+            {
+                var supplierToUpp = _context.Suppliers.FirstOrDefault(x => x.Id == supplier.Id);
+                supplierToUpp.SupplierName = supplier.SupplierName;
+                supplierToUpp.Discount = supplier.Discount;
+                supplierToUpp.Location = supplier.Location;
+                supplierToUpp.Nip = supplier.Nip;
+                supplierToUpp.Phone = supplier.Phone;
+                
+                _context.SaveChanges();
+            }
+        }
     }
 }
