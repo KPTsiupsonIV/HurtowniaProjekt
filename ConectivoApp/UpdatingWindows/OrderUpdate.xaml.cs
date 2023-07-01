@@ -49,9 +49,9 @@ namespace ConectivoApp.UpdatingWindows
             }
 
             int quantity;
-            if (int.TryParse(Quantiy.Text, out quantity))
+            if (int.TryParse(Quantity.Text, out quantity))
             {
-                order.Quantiy = quantity;
+                order.Quantity = quantity;
             }
             else
             {
@@ -60,9 +60,9 @@ namespace ConectivoApp.UpdatingWindows
             }
 
             int idEmployee;
-            if (int.TryParse(IdEmployee.Text, out idEmployee))
+            if (int.TryParse(EmployeeId.Text, out idEmployee))
             {
-                order.IdEmployee = idEmployee;
+                order.EmployeeId = idEmployee;
             }
             else
             {
@@ -71,9 +71,9 @@ namespace ConectivoApp.UpdatingWindows
             }
 
             decimal commissionValue;
-            if (decimal.TryParse(CommisionValue.Text, out commissionValue))
+            if (decimal.TryParse(ComissionValue.Text, out commissionValue))
             {
-                order.CommisionValue = commissionValue;
+                order.CommissionValue = commissionValue;
             }
             else
             {

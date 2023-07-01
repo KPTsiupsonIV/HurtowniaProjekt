@@ -7,10 +7,24 @@ using System.Threading.Tasks;
 
 namespace ConectivoApp
 {
+    /// <summary>
+    /// Represents the logic for managing the login state of an application.
+    /// </summary>
     public class LoginLogic
     {
+        /// <summary>
+        /// Gets or sets the ID of the logged-in user.
+        /// </summary>
         public static int Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the password of the logged-in user.
+        /// </summary>
         public static string? Password { get; set; }
+
+        /// <summary>
+        /// Gets or sets the login state. 1 represents logged in, and 0 represents logged out.
+        /// </summary>
         public static int IsLogged { get; set; }
 
         /// <summary>
@@ -38,7 +52,7 @@ namespace ConectivoApp
         /// <summary>
         /// Gets the login state.
         /// </summary>
-        /// <returns>The login state.</returns>
+        /// <returns>The login state. 1 represents logged in, and 0 represents logged out.</returns>
         public int GetState()
         {
             return IsLogged;

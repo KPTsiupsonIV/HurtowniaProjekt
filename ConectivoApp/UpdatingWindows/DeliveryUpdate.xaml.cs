@@ -36,7 +36,7 @@ namespace ConectivoApp.UpdatingWindows
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             // Create a new Delivery object and set its properties based on the user input
-            Delivery delivery = new Delivery();
+            Data.Delivery delivery = new Data.Delivery();
 
             // Validate and parse DeliveryDate
             if (DateTime.TryParse(DeliveryDate.Text, out DateTime deliveryDate))

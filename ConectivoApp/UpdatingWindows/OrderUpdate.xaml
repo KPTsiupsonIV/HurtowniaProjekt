@@ -17,19 +17,19 @@
         </StackPanel>
         <StackPanel Height="Auto" Width="120" Margin="225,-25,105,110" >
             <TextBox x:Name="Id"  Height="30"   Margin="0,100,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"/>
-            <TextBox x:Name="Quantiy"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="Quantity"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
             <TextBox x:Name="Price"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="IdEmployee"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="CommisionValue"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="EmployeeId"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="ComissionValue"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
 
 
         </StackPanel>
         <StackPanel Height="Auto" Margin="84,-20,241,130" >
             <Label Content="ID:" Margin="0,100,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="Quantiy:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="Quantity:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
             <Label Content="Price:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
             <Label Content="ID Employee" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="CommisionValue" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="ComissionValue" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
 
         </StackPanel>
         <Button x:Name="UpdateButton" Width="60" Height="40" Content="UPDATE" Margin="170,299,170,45" Click="UpdateButton_Click" Background="#464747" Foreground="#FF32ADD6" FontWeight="DemiBold"></Button>

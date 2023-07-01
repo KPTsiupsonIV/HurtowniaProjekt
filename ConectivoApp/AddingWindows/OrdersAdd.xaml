@@ -14,10 +14,10 @@
             <TextBlock VerticalAlignment="Top" Margin="0,29,10,0" FontSize="30" Foreground="#FF32ADD6" FontWeight="DemiBold"><Run Language="pl-pl" Text="er"/></TextBlock>
         </StackPanel>
         <StackPanel Height="Auto" Width="120" Margin="200,0,80,85" >
-            <TextBox x:Name="Quantiy"  Height="30"   Margin="0,100,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"/>
+            <TextBox x:Name="Quantity"  Height="30"   Margin="0,100,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"/>
             <TextBox x:Name="Price"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="IdEmployee"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="CommisionValue"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="EmployeeId"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="CommissionValue"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
         </StackPanel>
         <StackPanel Height="Auto" Margin="85,-5,240,115" >
             <Label Content="Quantity:" Margin="0,100,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>

@@ -19,7 +19,7 @@
             <TextBox x:Name="Id"  Height="30"   Margin="0,100,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"/>
             <TextBox x:Name="ProductName"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
             <TextBox x:Name="NeededQuantity"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="NowQuantiy"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="NowQuantity"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
             <TextBox x:Name="Priority"  Height="30"    Margin="0,10,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
 
 
@@ -28,7 +28,7 @@
             <Label Content="ID:" Margin="0,100,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
             <Label Content="Product Name:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
             <Label Content="Needed Quantity:" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
-            <Label Content="NowQuantiy" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
+            <Label Content="NowQuantity" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
             <Label Content="Priority" Margin="0,10,0,0" Height="30" Foreground="#177cb3" FontWeight="DemiBold" FontSize="13"/>
 
         </StackPanel>

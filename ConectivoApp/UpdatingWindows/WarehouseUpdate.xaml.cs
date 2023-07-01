@@ -39,9 +39,9 @@ namespace ConectivoApp.UpdatingWindows
             warehouse.ProductName = ProductName.Text;
 
             // Validate and parse the Now Quantity
-            if (int.TryParse(NowQuantiy.Text, out int nowQuantity))
+            if (int.TryParse(NowQuantity.Text, out int nowQuantity))
             {
-                warehouse.NowQuantiy = nowQuantity;
+                warehouse.NowQuantity = nowQuantity;
             }
             else
             {

@@ -21,6 +21,7 @@ using System.Security.AccessControl;
 using ConectivoApp.AddingWindows;
 using ConectivoApp.UpdatingWindows;
 using ConectivoApp.RemoveWindows;
+using static System.Collections.Specialized.BitVector32;
 
 namespace ConectivoApp
 {
@@ -33,11 +34,11 @@ namespace ConectivoApp
         private bool dayswitch = true;
         private DispatcherTimer timer;
         public LoginWindow loginWindow = new LoginWindow();
-        private char queType =' '; 
+        private char queType = ' ';
         public List<Employee> employeeList { get; set; }
-       
-    
-      
+
+
+
 
         private DeliveryQuery deliveryQuery = new DeliveryQuery();
         private OrdersQuery ordersQuery = new OrdersQuery();
@@ -48,15 +49,16 @@ namespace ConectivoApp
         public MainWindow()
         {
             InitializeComponent();
-            using(HurtowniaContext _context = new HurtowniaContext())
+            using (HurtowniaContext _context = new HurtowniaContext())
             {
+
                 _context.Database.EnsureCreated();
                 employeeList = _context.Employees.ToList();
             }
-            
-            
+
+
             timer = new DispatcherTimer();
-            
+
 
             // Set the interval (e.g., 1 second)
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -68,12 +70,12 @@ namespace ConectivoApp
 
             // Start the timer
             timer.Start();
-            if(login == 1)
+            if (login == 1)
             {
                 timer.Stop();
             }
 
-           
+
 
         }
 
@@ -87,7 +89,7 @@ namespace ConectivoApp
             var color = MainGrid.Background as SolidColorBrush;
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
             var newColor = color.Color.Equals(Color.FromArgb(0xFF, 0xED, 0xED, 0xED)) ?
-                            new SolidColorBrush(Color.FromArgb(0xFF, 0xB8, 0xB9, 0xBA)):
+                            new SolidColorBrush(Color.FromArgb(0xFF, 0xB8, 0xB9, 0xBA)) :
                             new SolidColorBrush(Color.FromArgb(0xFF, 0xED, 0xED, 0xED));
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
@@ -115,7 +117,7 @@ namespace ConectivoApp
         /// </summary>
         private void Loggin_Click(object sender, RoutedEventArgs e)
         {
-            if(login == 0)
+            if (login == 0)
             {
                 loginWindow.Show();
             }
@@ -128,10 +130,10 @@ namespace ConectivoApp
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            
+
             login = loginWindow.GetState();
 
-            if(login == 1)
+            if (login == 1)
             {
                 IdText.Text = $"ID: {loginWindow.GetId()}";
                 loginWindow.Hide();
@@ -238,6 +240,7 @@ namespace ConectivoApp
                 default:
                     break;
             }
+            
         }
 
 
@@ -250,7 +253,7 @@ namespace ConectivoApp
         {
             if (login == 1)
             {
-            switch (queType)
+                switch (queType)
                 {
                     case 'd':
                         DeliveryAdd deliveryAdd = new DeliveryAdd();
@@ -284,6 +287,8 @@ namespace ConectivoApp
 
         }
 
+        
+
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             if (login == 1)
@@ -291,11 +296,11 @@ namespace ConectivoApp
                 switch (queType)
                 {
                     case 'd':
-                       DeliveryUpdate deliveryUpdate = new DeliveryUpdate();
+                        DeliveryUpdate deliveryUpdate = new DeliveryUpdate();
                         deliveryUpdate.Show();
                         break;
                     case 'o':
-                       OrderUpdate orderUpdate = new OrderUpdate();
+                        OrderUpdate orderUpdate = new OrderUpdate();
                         orderUpdate.Show();
                         break;
                     case 'p':
@@ -307,8 +312,8 @@ namespace ConectivoApp
                         supplierUpdate.Show();
                         break;
                     case 'w':
-                       WarehouseUpdate warehouseUpdate = new WarehouseUpdate();
-                      warehouseUpdate.Show();
+                        WarehouseUpdate warehouseUpdate = new WarehouseUpdate();
+                        warehouseUpdate.Show();
                         break;
                     default:
                         MessageBox.Show("You have not selected que whre you want to make changes");
@@ -356,6 +361,58 @@ namespace ConectivoApp
             else
             {
                 MessageBox.Show("You are not logged");
+            }
+        }
+        private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (queType)
+            {
+                case 'o':
+                    switch (e.PropertyName)
+                    {
+                        case "Employee":
+                            e.Cancel = true;
+                            break;
+                    }
+                    break;
+
+                case 'p':
+                    switch (e.PropertyName)
+                    {
+                        case "Warehouses":
+                        case "Deliveries":
+                            e.Cancel = true;
+                            break;
+                    }
+                    break;
+
+                case 's':
+                    switch (e.PropertyName)
+                    {
+                        case "Deliveries":
+                            e.Cancel = true;
+                            break;
+                    }
+                    break;
+
+                case 'w':
+                    switch (e.PropertyName)
+                    {
+                        case "Product":
+                            e.Cancel = true;
+                            break;
+                    }
+                    break;
+
+                case 'd':
+                    switch (e.PropertyName)
+                    {
+                        case "Product":
+                        case "Supplier":
+                            e.Cancel = true;
+                            break;
+                    }
+                    break;
             }
         }
     }

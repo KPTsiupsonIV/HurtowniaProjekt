@@ -39,8 +39,6 @@ namespace ConectivoApp.AddingWindows
                 // Parse input values and add the delivery using the DeliveryQuery class
                 DeliveryQuery query = new DeliveryQuery();
                 query.DeliveryAdd(ProductName.Text, int.Parse(Quantity.Text), decimal.Parse(PriceBrutto.Text), decimal.Parse(PriceNetto.Text), DateTime.Parse(DeliveryDate.Text), SupplierName.Text);
-
-                MessageBox.Show($"You have added: {ProductName.Text} delivery to Delivery");
             }
         }
 

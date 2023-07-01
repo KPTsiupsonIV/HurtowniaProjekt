@@ -16,7 +16,7 @@
         <StackPanel Height="Auto" Width="120" Margin="200,0,80,85" >
             <TextBox x:Name="ProductName"  Height="30"   Margin="0,100,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"/>
             <TextBox x:Name="NeededQuantity"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
-            <TextBox x:Name="NowQuantiy"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
+            <TextBox x:Name="NowQuantity"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
             <TextBox x:Name="Priority"  Height="30"    Margin="0,20,0,0" BorderThickness="0,0,0,3" BorderBrush="#177cb3" Foreground="#177cb3" Background="Transparent" FontWeight="DemiBold"></TextBox>
         </StackPanel>
         <StackPanel Height="Auto" Margin="85,-5,240,115" >

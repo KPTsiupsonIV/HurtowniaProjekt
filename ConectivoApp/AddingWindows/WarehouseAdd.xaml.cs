@@ -31,7 +31,7 @@ namespace ConectivoApp.AddingWindows
             }
 
             int nowQuantity;
-            if (!int.TryParse(NowQuantiy.Text, out nowQuantity) || nowQuantity < 0)
+            if (!int.TryParse(NowQuantity.Text, out nowQuantity) || nowQuantity < 0)
             {
                 MessageBox.Show("Now Quantity must be a positive integer.");
                 return;

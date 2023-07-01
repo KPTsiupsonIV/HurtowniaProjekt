@@ -37,6 +37,7 @@ namespace ConectivoApp
             using (HurtowniaContext _context = new HurtowniaContext())
             {
                 // Retrieve the list of employees from the database
+                _context.Database.EnsureCreated();
                 employeeList = _context.Employees.ToList();
             }
         }

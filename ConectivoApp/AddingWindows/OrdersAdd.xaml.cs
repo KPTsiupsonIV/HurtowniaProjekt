@@ -40,9 +40,9 @@ namespace ConectivoApp.AddingWindows
                 // Create a new Order object and assign the input values
                 Order order = new Order();
                 order.Price = decimal.Parse(Price.Text);
-                order.CommisionValue = decimal.Parse(CommisionValue.Text);
-                order.IdEmployee = int.Parse(IdEmployee.Text);
-                order.Quantiy = int.Parse(Quantiy.Text);
+                order.CommissionValue = decimal.Parse(CommissionValue.Text);
+                order.EmployeeId = int.Parse(EmployeeId.Text);
+                order.Quantity = int.Parse(Quantity.Text);
 
                 // Add the order using the OrdersQuery class
                 OrdersQuery query = new OrdersQuery();
@@ -65,22 +65,22 @@ namespace ConectivoApp.AddingWindows
                 return false;
             }
 
-            // Validate CommisionValue input
-            if (!decimal.TryParse(CommisionValue.Text, out decimal commisionValue) || commisionValue < 0)
+            // Validate ComissionValue input
+            if (!decimal.TryParse(CommissionValue.Text, out decimal commisionValue) || commisionValue < 0)
             {
                 MessageBox.Show("Please enter a valid commission value.");
                 return false;
             }
 
-            // Validate IdEmployee input
-            if (!int.TryParse(IdEmployee.Text, out int idEmployee) || idEmployee <= 0)
+            // Validate EmployeeId input
+            if (!int.TryParse(EmployeeId.Text, out int idEmployee) || idEmployee <= 0)
             {
                 MessageBox.Show("Please enter a valid employee ID.");
                 return false;
             }
 
             // Validate Quantity input
-            if (!int.TryParse(Quantiy.Text, out int quantity) || quantity <= 0)
+            if (!int.TryParse(Quantity.Text, out int quantity) || quantity <= 0)
             {
                 MessageBox.Show("Please enter a valid quantity.");
                 return false;

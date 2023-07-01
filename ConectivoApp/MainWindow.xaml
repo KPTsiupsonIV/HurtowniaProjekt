@@ -55,7 +55,7 @@
 
         <!-- Main -->
         <Grid Grid.Column="1" Margin="0,12,0,0" Grid.Row="1">
-            <DataGrid x:Name="deliveriesGrid" Margin="10,65,10,10" Foreground="#464747" 
+            <DataGrid x:Name="deliveriesGrid" Margin="10,65,10,10" Foreground="#464747" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" ColumnWidth="*"
                        >
 
             </DataGrid>
