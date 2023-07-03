@@ -119,13 +119,16 @@ namespace ConectivoApp
         {
             if (login == 0)
             {
-                loginWindow.Show();
+                if (loginWindow == null || !loginWindow.IsVisible)
+                {
+                    loginWindow = new LoginWindow();
+                    loginWindow.Show();
+                }
             }
             else
             {
                 Application.Current.Shutdown();
             }
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
